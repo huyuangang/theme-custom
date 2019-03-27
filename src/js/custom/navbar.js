@@ -3,7 +3,7 @@ var $ = require('jquery');
 
 var gitbook = window.gitbook;
 
-gitbook.events.on('start', init);
+gitbook.events.on('page.change', init);
 
 
 function init(){
