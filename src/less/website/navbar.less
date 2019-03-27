@@ -1,0 +1,38 @@
+.book-nav {
+  height: 76px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #19263E;
+  padding: 0 30px;
+  &-brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 76px;
+    &-logo {
+      height: 50px;
+    }
+  }
+  &-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 76px;
+    &-link {
+      display: block;
+      box-sizing: border-box;
+      height: 76px;
+      line-height: 76px;
+      padding: 0 20px;
+      color: #fff;
+      &:hover {
+        color: #1D6EF0;
+      }
+      &-active {
+        color: #1D6EF0;
+      }
+    }
+  }
+}

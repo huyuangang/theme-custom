@@ -11,6 +11,9 @@ mkdir -p _assets/ebook/
 browserify src/js/core/index.js | uglifyjs -mc > _assets/website/gitbook.js
 browserify src/js/theme/index.js | uglifyjs -mc > _assets/website/theme.js
 
+# 编译自定义js
+browserify src/js/custom/navbar.js | uglifyjs -mc > _assets/website/navbar.js
+
 # Compile Website CSS
 lessc -clean-css src/less/website.less _assets/website/style.css
 

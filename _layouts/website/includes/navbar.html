@@ -1,0 +1,23 @@
+
+{% block book_navbar %}
+{% set customConfig = config.pluginsConfig['theme-custom'] %}
+{% set navbar = customConfig.navbar %}
+{% set brand = navbar.brand %}
+{% set nav = navbar.nav %}
+<div class="book-nav">
+  {% if brand %}
+    <a class="book-nav-brand" href="{{brand.url}}">
+      {% if brand.logo %}
+        <img class="book-nav-brand-logo" src="{{brand.logo.path|resolveFile}}" alt="{{brand.logo.alt}}">
+      {% endif %}
+    </a>
+  {% endif %}
+  {% if nav %}
+    <div class="book-nav-list">
+      {% for item in nav %}
+        <a href="{{item.url}}" data-part="{{item.part}}" class="book-nav-list-link">{{item.text}}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

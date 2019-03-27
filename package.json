@@ -1,6 +1,6 @@
 {
-  "name": "gitbook-plugin-theme-default",
-  "description": "Default theme for GitBook",
+  "name": "gitbook-plugin-theme-custom",
+  "description": "Custom theme for GitBook",
   "main": "./index.js",
   "version": "1.0.7",
   "engines": {

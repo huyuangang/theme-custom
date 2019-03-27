@@ -1,6 +1,6 @@
-{% macro articles(_articles) %}
+{% macro articles(_articles, partTitle) %}
     {% for article in _articles %}
-        <li class="chapter {% if article.path == file.path and not article.anchor %}active{% endif %}" data-level="{{ article.level }}" {% if article.path %}data-path="{{ article.path|resolveFile }}"{% endif %}>
+        <li class="chapter {% if article.path == file.path and not article.anchor %}active{% endif %}" data-level="{{ article.level }}" {% if article.path %}data-path="{{ article.path|resolveFile }}" data-part="{{partTitle}}"{% endif %}>
             {% if article.path and getPageByPath(article.path) %}
                 <a href="{{ article.path|resolveFile }}{{ article.anchor }}">
             {% elif article.url %}
@@ -20,7 +20,7 @@
 
             {% if article.articles.length > 0 %}
             <ul class="articles">
-                {{ articles(article.articles, file, config) }}
+                {{ articles(article.articles, partTitle, file, config) }}
             </ul>
             {% endif %}
         </li>
@@ -44,11 +44,10 @@
 
     {% for part in summary.parts %}
         {% if part.title %}
-        <li class="header">{{ part.title }}</li>
         {% elif not loop.first %}
         <li class="divider"></li>
         {% endif %}
-        {{ articles(part.articles, file, config) }}
+        {{ articles(part.articles, part.title, file, config) }}
     {% endfor %}
 
     <li class="divider"></li>
