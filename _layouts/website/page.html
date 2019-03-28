@@ -17,7 +17,7 @@
 {% block javascript %}
     <script src="{{ "gitbook.js"|resolveAsset }}"></script>
     <script src="{{ "theme.js"|resolveAsset }}"></script>
-    <script src="{{ "navbar.js"|resolveAsset }}"></script>
+    <script src="{{ "custom.js"|resolveAsset }}"></script>
     {% for resource in plugins.resources.js %}
         {% if resource.url %}
         <script src="{{ resource.url }}"></script>
@@ -28,6 +28,7 @@
 {% endblock %}
 
 {% block body %}
+{% include "./includes/loading.html" %}
 {% include "./includes/navbar.html" %}
 <div class="book">
     <div class="book-summary">

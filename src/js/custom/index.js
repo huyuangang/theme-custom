@@ -3,6 +3,8 @@ var $ = require('jquery');
 
 var gitbook = window.gitbook;
 
+// 切换页面增加loading动画
+gitbook.events.on('custom.page.init', showLoading);
 
 // 页面更改后更新目录
 gitbook.events.on('page.change', change);
@@ -28,4 +30,11 @@ function change(){
       $(this).hide();
     }
   })
+
+  // hide loding
+  $('.custom-loading-bg').hide();
+}
+
+function showLoading() {
+  $('.custom-loading-bg').show();
 }
