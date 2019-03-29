@@ -232,7 +232,6 @@ function handleNavigation(relativeUrl, push) {
     // Is it an absolute url
     var isAbsolute = Boolean(uriParsed.hostname);
 
-    gitbook.events.trigger('custom.page.init');
     
     if (!usePushState || isAbsolute) {
         // Refresh the page to the new URL if pushState not supported
@@ -246,6 +245,8 @@ function handleNavigation(relativeUrl, push) {
         return scrollToHash(hash);
     }
 
+    gitbook.events.trigger('custom.page.init');
+    
     prevUri = uri;
 
     var promise = $.Deferred(function(deferred) {
