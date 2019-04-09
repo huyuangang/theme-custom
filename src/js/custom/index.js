@@ -33,6 +33,11 @@ function change(){
 
   // hide loding
   $('.custom-loading-bg').hide();
+
+  if (!location.hash) {
+    $('.book-body').scrollTop(0);
+    $('.book-inner').scrollTop(0);
+  }
 }
 
 function showLoading() {
