@@ -42,4 +42,8 @@ function change(){
 
 function showLoading() {
   $('.custom-loading-bg').show();
+  // 5s后隐藏
+  setTimeout(function() {
+    $('.custom-loading-bg').hide();
+  }, 5000);
 }
